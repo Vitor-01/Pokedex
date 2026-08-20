@@ -1,0 +1,41 @@
+.estrutura{
+    display:flex;
+    justify-content: center;
+    margin-top:3%;
+}
+
+.exibirPoke{
+    background-color:#f6df9f;
+    padding:20px 20px 20px 20px;
+    display:grid;
+    width: 80%;
+    min-height: 400px;;
+    overflow: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 15px;
+    border-radius:30px;
+}
+.cardPoke{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(231, 200, 115);
+    border-radius:30px;
+    width:100%;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor:pointer;
+    
+}
+.cardPoke img{
+    width: 80%;
+    
+}
+.nomePoke{
+    text-transform: capitalize;
+}
+.cardPoke span{
+    margin-right: 5px;
+    border-radius: 5px;
+}

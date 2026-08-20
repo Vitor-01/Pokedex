@@ -1,0 +1,16 @@
+.spinner{
+   width:40px;
+   height: 40px;
+   border: 5px solid rgb(27, 170, 202);
+   border-top:5px solid rgb(26, 75, 86);
+   border-radius:50%;
+   animation: girando 1s linear infinite;
+}
+@keyframes girando{
+    from{
+        transform:rotate(0deg)
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}

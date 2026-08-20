@@ -1,0 +1,75 @@
+import { useEffect, useState } from "react"
+
+import Header from "./header.jsx"
+function ListandoPoke({setListaPoke}){
+    
+    useEffect(()=>{
+
+        async function buscandoPokeLista(){
+
+            const lista = []
+                
+                for(let contador = lista.length +1; contador <1026; contador++){
+                const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${contador}`)
+                const dados = await resposta.json()
+                lista.push(
+                    {
+                        nome:dados.name,
+                        id: dados.id,
+                        img: dados.sprites.other["official-artwork"].front_default,
+                        types: dados.types.map(tipo => tipo.tipe.name)
+                        /*status: dados.stats*/});
+            }
+            setListaPoke(lista)
+            console.log(lista)
+        }
+        buscandoPokeLista()
+
+    },[])
+
+   
+
+    return(
+        <>
+          
+        </>
+    )
+}
+export default ListandoPoke
+
+
+
+
+
+
+
+
+
+
+
+async function limitarConcorrencia(tarefas, limite) {
+
+    const resultados = [];
+    let proximaTarefa = 0;
+
+    async function trabalhador() {
+
+        while (proximaTarefa < tarefas.length) {
+
+            const indice = proximaTarefa;
+            proximaTarefa++;
+
+            resultados[indice] = await tarefas[indice]();
+        }
+    }
+
+    const trabalhadores = [];
+
+    for (let i = 0; i < limite; i++) {
+        trabalhadores.push(trabalhador());
+    }
+
+    await Promise.all(trabalhadores);
+
+    return resultados;
+}

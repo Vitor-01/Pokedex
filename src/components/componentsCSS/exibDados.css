@@ -1,0 +1,335 @@
+/*
+================================================================================
+                            FUNDO DA TELA
+*/
+.dadosPoke{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(69, 63, 63, 0.7);
+    width:100%;
+    height: 100%;
+    top:0;
+    z-index: 10;
+}
+/* 
+================================================================================
+                        BOTÕES LATERAIS(<|>)
+*/
+.mudandoPoke{
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    color:white;
+   
+    cursor:pointer;
+}
+/* 
+================================================================================
+                        CORPO ONDE OS DADOS SÃO MOSTRADOS
+*/
+.divDados{
+    padding: 20px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    min-width: 60%;
+    max-width: 85%;
+    min-height: 0%;
+    max-height: 95%;
+    border-radius:20px;
+    
+}
+/* 
+================================================================================
+                            CONTEUDO INTERNO DO CORPO
+*/
+.conteudo-poke{
+     display: flex;
+     max-width: 100%;
+     overflow: hidden;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 5%;
+}
+/* 
+================================================================================
+                            EXIBIÇÃO DO CONTEUDO EM TELAS MENORES
+*/
+@media(max-width:600px){
+    .divDados{
+        min-width: 100%;
+    }
+    .conteudo-poke {
+        flex-direction: column;
+        padding-bottom: 40px;
+        max-width: 95%;
+    }
+    .conteudo{
+        overflow: auto;
+        margin: 20px;
+    }
+    .close{
+        max-width: 80%;
+    }
+}
+/* 
+================================================================================
+                            LADO ESQUERDO
+*/
+.ladoEsquerdo{
+    min-height: 60%;
+    min-width: 45%;
+   
+    max-height: 90%;
+   
+    background-color:var(--corPrincipal);
+    border-radius: 10px;
+    
+    overflow: hidden;
+}
+.ladoEsquerdo p{
+    padding-left: 10px;
+    overflow: hidden;
+}
+.topoEsquerdo{
+    
+    text-align: center;
+    
+    
+}
+.numeracao{
+    color: color-mix(in srgb, var(--corPrincipal) 35%, black)
+}
+.topoEsquerdo img{
+    
+    width: 60%;
+    max-width: 180px;
+    margin-right: 15px;;
+    filter: drop-shadow(0 10px 4px rgba(20, 20, 20, 0.652));
+}
+/* 
+================================================================================
+                            INFORMAÇÕES DO LADO ESQUERDO
+*/
+
+.DadosEsquerdo{
+    margin: 0px 10px 0px 10px;
+    border-radius: 15px;
+    max-height: 50%;
+    background-color:color-mix(in srgb, var(--corPrincipal) 70%, white) ;
+   
+}
+/* 
+================================================================================
+                    PARTE DOS TEXTOS E DADOS CONTIDOS NO LADO ESQUERDO
+*/
+.corpoPoke{
+    display: flex;justify-content: center;
+    
+}
+
+.corpoPoke svg{
+    color:color-mix(in srgb, var(--corPrincipal)60%, black);
+}
+.linhaVertical{
+    width: 1px;
+    height: 100%;
+    margin: 15px;
+    background-color: #5456597a;
+    border:none;
+}
+.dadosCorpo{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+.dadosCorpo p{
+    margin: 0;
+}
+
+.sobrePoke{
+   
+    border-radius:0px 0px 15px 15px;
+    margin: 5px;
+    padding-bottom: 5px;
+}
+.sobrePoke h3{
+    text-transform: capitalize;
+    text-align: center;
+    
+}
+.sobrePoke p{
+    text-align: center;
+}
+/* 
+================================================================================
+                    >>>>  LADO DIREITO  <<<<<
+*/
+.ladoDireito{
+    min-height: 60%;
+    min-width: 45%;
+    max-height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 10px;;
+}
+
+.nome{
+    text-transform:capitalize;
+}
+.conteinerTipos{
+    display: flex;
+}
+.conteinerTipos span{
+    min-width: 100px;
+    justify-content: center;
+}
+ /* 
+================================================================================
+                         ATRIBUTOS/STATUS
+*/
+.conteiner{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.nameStts{
+    width: 120px;
+    text-transform: capitalize;
+    margin:0;
+    white-space: nowrap;
+    overflow:hidden;
+}
+.sttsBar{
+    display: flex;;
+    align-items: center;
+}
+
+.containerProgress{
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 200px;;
+    width:100%;
+    height: 15px;
+    background-color: rgba(176, 174, 174, 0.488);
+    border-radius: 25px;
+}
+/* 
+================================================================================
+                            ATRIBUTOS/STTS EM TELAS MENORES
+*/
+.special-attack::after {
+        content: "";
+   }
+.special-defense::after{
+    content:"";
+}
+@media(max-width:800px){
+    .special-attack{
+        font-size: 0;
+    }
+    .special-defense{
+        font-size: 0;
+    }
+    .special-attack::after {
+        content: "Esp.Atk";
+        font-size: 16px;
+   }
+   .special-defense::after{
+        content:"Esp.Def";
+        font-size: 16px;;
+   }
+}
+/* 
+================================================================================
+                        COR DAS BARRAS DE STTS
+*/
+.prog{
+    height: 15px;
+    border-radius: 25px;
+    max-width: 100%;
+}
+/* progcolors*/
+div.proghp{
+    background-color: green;
+}
+div.progattack{
+    background-color: #F1CA4A;  
+    ;
+}
+div.progdefense{
+    background-color: #E47030;  
+}
+div.progspecial-attack{
+    background-color: #DA7461;
+}
+div.progspecial-defense{
+    background-color: #6B93C8;
+}
+div.progspeed{
+    background-color: #7158AB;
+}
+/* 
+================================================================================
+                    >>>>  FRAQUEZAS  <<<<<
+*/
+.contFraquezas{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
+    column-gap: 8px;
+    row-gap: 8px;
+}
+.tipos{
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+     overflow: hidden;
+}
+.tipos img{
+    max-width: 30px;
+   
+    border-radius: 100%;
+    background:color-mix(in srgb, transparent 70%, black);
+}
+
+/* 
+================================================================================
+                    BOTÃO DE FECHAR NA PARTE INFERIOR DO CORPO
+*/
+.close{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 95%;;
+    height: 40px;
+    background-color: red;
+    border-radius:15px;
+    border:none;
+    color:white;
+    font-size: 16px;;
+    cursor:pointer;
+
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.close img{
+  margin:0;
+  padding: 0;;
+  width:20px;
+  height: 20px;
+  margin-right: 15px;;
+}
